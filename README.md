@@ -1,2 +1,3 @@
 # Cheat-Sheets
-A place for all my notes on how to do stuff...
+
+** Move all your cheat sheets into this repo **
