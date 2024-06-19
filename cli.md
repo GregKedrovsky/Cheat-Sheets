@@ -51,11 +51,15 @@ Running `arp` at the command line will print the arp table (shows the IPs mapped
 
 `lsb_release` tells you which gnu/linux distro you are using
 
-```lsb_release -a```
+```
+lsb_release -a
+```
 
 `uname -a` tells you which linux kernel you are using
 
-```uname -a```
+```
+uname -a
+```
 
 ## cut
 
@@ -89,7 +93,19 @@ watch vmstat -d
 htop
 ```
 
-## find
+## [find](../find.md)
+
+Basic Syntax: 
+
+```find /path/to/search/ -name searchTerm```
+
+If you get a bunch of garbage on the screen, send it all to /dev/null:
+
+```find /path/to/search/ -name searchTerm 2>/dev/null```
+
+[[general_find | More details here.]]
+
+----
 
 
 ## grep
