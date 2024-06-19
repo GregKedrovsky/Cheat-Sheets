@@ -93,23 +93,38 @@ watch vmstat -d
 htop
 ```
 
-## [find](find.md)
+## find
 
-Basic Syntax: 
+More details on the [find.md](find.md) page. Basic Syntax: 
 
-```find /path/to/search/ -name searchTerm```
+```
+find /path/to/search/ -name searchTerm
+```
 
 If you get a bunch of garbage on the screen, send it all to /dev/null:
 
-```find /path/to/search/ -name searchTerm 2>/dev/null```
-
-[[general_find | More details here.]]
-
-----
-
+```
+find /path/to/search/ -name searchTerm 2>/dev/null
+```
 
 ## grep
 
+### Syntax:
+```grep [options...] pattern-spec [files...]```
+
+### Purpose:
+To print lines of text from the named files that match one or more of the pattern specifications. 
+- Often pipe the output to something else to do something with it. 
+- `grep` is used to **extract** data. `sed` can then be used to **substitute** data.
+
+### Main Options:
+- `-E` : Match using extended regular expressions
+- `-F` : Match using fixed strings (default behavior w/ no options)
+- `-i` : ignore lettercase when doing pattern searching
+- `-l` : List the names of the files that contain a match of the pattern instead of printing the matching lines. 
+
+### Behavior:
+Read through each file named on the command line. When a line contains a match of the pattern being searched for, print that line. 
 
 ## netstat
 
