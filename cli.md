@@ -210,7 +210,7 @@ The `showmount` command shows information about an NFS server.
 
 ### Options:
 
-|Option&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp| Description |
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Option&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description |
 |:--------------:|-------------|
 | `-a`           | Print all remote mounts in the format hostname:directory, where hostname is the name of the client and directory is the root of the filesystem that has been mounted. |
 | `-d`           | List directories that have been remotely mounted by clients. |
@@ -257,9 +257,9 @@ To strip off the color codes, pipe through sed:
 ```
 [cli program] | sed -r 's/\x1b\[[0-9;]*m//g' | tee output_file.txt
 ```
-- `-r   use extended regular expressions
-- `s   s/regexp/replacement/
-- `\x1b  The ASCII "escape" character (octal: \033, hex: \x1B or ^[ , or in decimal: 27). Used to start a series of characters called a control sequence or escape sequence
+- `-r` - use extended regular expressions
+- `s` - search (or search and replace with this syntax: `s/regexp/replacement/`)
+- `\x1b` - The ASCII "escape" character (octal: \033, hex: \x1B or ^[ , or in decimal: 27). Used to start a series of characters called a control sequence or escape sequence
 
 And you could always alias that in your `.bashrc` file:
 
