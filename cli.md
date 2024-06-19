@@ -210,7 +210,7 @@ The `showmount` command shows information about an NFS server.
 
 ### Options:
 
-|Option&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp| Description |
+|Option&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp| Description |
 |:--------------:|-------------|
 | `-a`           | Print all remote mounts in the format hostname:directory, where hostname is the name of the client and directory is the root of the filesystem that has been mounted. |
 | `-d`           | List directories that have been remotely mounted by clients. |
