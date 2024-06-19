@@ -5,23 +5,23 @@
 - [Linux Commands Cheat Sheet](https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/)
 
 ## Contents
-- [apt](
-- [arp](
-- [check distro](
-- [cut](
-- [dd: wipe a disk](
-- [find](
-- [grep](
-- [netstat](
-- [PATH](
-- [printf](
-- [printf vs. echo](
-- [sed](
-- [showmount](
-- [tar](
-- [tee](
-- [tr](
-- [untar](
+- [apt](#apt)
+- [arp](#arp)
+- [check distro](#check-distro)
+- [cut](#cut)
+- [dd: wipe a disk](#dd-wipe-a-disk)
+- [find](#find)
+- [grep](#grep)
+- [netstat](#netstat)
+- [PATH](#path)
+- [printf](#printf)
+- [printf vs. echo](#printf-vs-echo)
+- [sed](#sed)
+- [showmount](#showmount)
+- [tar](#tar)
+- [tee](#tee)
+- [tr](#tr)
+- [untar](#untar)
 
 ## apt
 
