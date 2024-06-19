@@ -166,25 +166,124 @@ printf "The first program always prints '%s, %s\!'\n" Hello world
 # prints: The first program always prints 'Hello, world!'
 ```
 
-
 ## printf vs. echo
 
+```
+echo $var             # is the same as...
+printf '%s\n' "$var"
+
+echo -n $var          # is the same as...
+printf '%s' "$var"
+```
+
+`printf` is better than `echo` because of portability and reliability.
+
+You cannot use `echo` to display uncontrolled data. In other words, if you're writing a script and it is taking external input (from the user as arguments, or file names from the file system...), you cannot use `echo` to display it.
+
+```
+printf '%\n' "$var"
+# this will output the content of $var followed by a newline character
+# regardless of what character it may contain
+
+printf '%\n' "$var"
+# this will output the content of $var without a newline character
+```
+
+All in all, you do not know what `echo "$var"` will output unless you can make sure that `$var` does not contain backslash characters and does not start with a hyphen/dash ( - ). The POSIX specification tells us to use `printf` instead in that case. 
+
+[source](https://unix.stackexchange.com/questions/65803/why-is-printf-better-than-echo)
 
 ## sed
 
+Clean up carriage returns from Linux to Windows (e.g., you download and edit a script on Windows machine so you can use something like Notepad++ to edit the file and then dump it back into Linux to run it).  [source](https://www.tripwire.com/state-of-security/security-awareness/oscp-journey/|Source).
+
+```
+sed -i -e 's/\r$//' [script name]
+```
 
 ## showmount
 
+The `showmount` command shows information about an NFS server. 
+
+### Syntax:
+
+```
+/usr/sbin/showmount -e [Target IP]
+```
+
+### Options:
+
+|  Option  | Description |
+|  `-a`            | Print all remote mounts in the format hostname:directory, where hostname is the name of the client and directory is the root of the filesystem that has been mounted. |
+|  `-d`            | List directories that have been remotely mounted by clients. |
+|  `-e`            | Print the list of exported filesystems. |
+|  `-h`            | Provide a short help summary. |
+|  `--no-headers`  | Do not print headers. |
+|  `-v`            | Report the current version of the program. |
 
 ## tar
 
+Use the following command to compress an entire directory or a single file on Linux. It’ll also compress every other directory inside a directory you specify–in other words, it works recursively.
+
+```
+tar -cvzf name-of-archive.tar.gz /path/to/directory-or-file
+```
+- `c` - create an archive
+- `v` - verbose
+- `z` - zip / gnuzip
+- `f` - file (name follows)
 
 ## tee
 
+Reads from the standard input and writes to both standard output and one or more files at the same time (takes on stream of data and "T's" is out--splits it--to two targets). 
+
+### Syntax:
+
+```
+tee [OPTIONS] [FILE_NAMES]
+```
+**Options:**
+- `-a (--append)` - Do not overwrite the files instead append to the given files
+- `-i (--ignore-interrupts)` - Ignore interrupt signals
+- `FILE_NAMES` - One or more files. Each of which the output data is written to.
+
+### Usage:
+The most basic usage of the `tee` command is to [1] display the standard output (stdout) of a program and [2] write it in a file.
+
+```
+[cli program] | tee output_file.txt
+```
+
+To strip off the color codes, pipe through sed: 
+
+```
+[cli program] | sed -r 's/\x1b\[[0-9;]*m//g' | tee output_file.txt
+```
+- `-r   use extended regular expressions
+- `s   s/regexp/replacement/
+- `\x1b  The ASCII "escape" character (octal: \033, hex: \x1B or ^[ , or in decimal: 27). Used to start a series of characters called a control sequence or escape sequence
+
+And you could always alias that in your `.bashrc` file:
+
+```
+alias tee="sed -r 's/\x1b\[[0-9;]*m//g' | tee"
+```
 
 ## tr
 
+**Translate:** Use this to (among other things) convert lower case to upper case. Example:
+
+```
+sha256sum filename.ext | tr [:lower:] [:upper:]
+```
 
 ## untar
 
+```
+tar xvzf filename
+```
+- `x` - extract
+- `v` - verbose
+- `z` - zip / gnuzip
+- `f` - file (name follows)
 
