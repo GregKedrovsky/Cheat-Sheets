@@ -128,11 +128,43 @@ Read through each file named on the command line. When a line contains a match o
 
 ## netstat
 
+Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+
+```
+netstat -ano  # shows the active connections running on your machine
+```
 
 ## PATH
 
+```
+echo $PATH             # to see your current path
+PATH=$PATH:$HOME/bin   # add the home dir /bin subdir to your PATH
+```
+
+To make changes to your PATH permanent, add /paths/to/directories to your `.profile` file (read each time you login).
 
 ## printf
+
+### Syntax
+```
+printf format-string [arguments...]
+```
+
+`format-string` = a string describing your desired output (best supplied as a string constant in quotes).
+- This will be a mix of characters to be printed literally and *format specifications*.
+- Format specifications are preceded by a percent sign (%). 
+  - `%s` specifies a string
+  - `%d` specifies decimal integers
+
+`arguments` = a list of arguments like strings or variable values that will correspond to the format specificatons.
+- If you have more arguments than format specifications, printf will cycle through the format specifications in the format string, reusing them in order, until finished. 
+
+### Example:
+
+```
+printf "The first program always prints '%s, %s\!'\n" Hello world
+# prints: The first program always prints 'Hello, world!'
+```
 
 
 ## printf vs. echo
