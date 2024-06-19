@@ -9,8 +9,7 @@
 - [arp](
 - [check distro](
 - [cut](
-- [dd](
-  - [wipe a disk](
+- [dd: wipe a disk](
 - [find](
 - [grep](
 - [netstat](
@@ -65,9 +64,7 @@ uname -a
 
 *pending*
 
-## dd
-
-### wipe a disk
+## dd: wipe a disk
 
 Fill the disk with all zeros (may take a while; it switches every bit to 0):
 
@@ -156,15 +153,15 @@ printf format-string [arguments...]
   - `%s` specifies a string
   - `%d` specifies decimal integers
 
-`arguments` = a list of arguments like strings or variable values that will correspond to the format specificatons.
+`[arguments...]` = a list of arguments like strings or variable values that will correspond to the format specificatons.
 - If you have more arguments than format specifications, printf will cycle through the format specifications in the format string, reusing them in order, until finished. 
 
 ### Example:
 
 ```
 printf "The first program always prints '%s, %s\!'\n" Hello world
-# prints: The first program always prints 'Hello, world!'
 ```
+Prints the following: `The first program always prints 'Hello, world!'`
 
 ## printf vs. echo
 
@@ -213,13 +210,14 @@ The `showmount` command shows information about an NFS server.
 
 ### Options:
 
-|  Option  | Description |
-|  `-a`            | Print all remote mounts in the format hostname:directory, where hostname is the name of the client and directory is the root of the filesystem that has been mounted. |
-|  `-d`            | List directories that have been remotely mounted by clients. |
-|  `-e`            | Print the list of exported filesystems. |
-|  `-h`            | Provide a short help summary. |
-|  `--no-headers`  | Do not print headers. |
-|  `-v`            | Report the current version of the program. |
+|Option&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp| Description |
+|:--------------:|-------------|
+| `-a`           | Print all remote mounts in the format hostname:directory, where hostname is the name of the client and directory is the root of the filesystem that has been mounted. |
+| `-d`           | List directories that have been remotely mounted by clients. |
+| `-e`           | Print the list of exported filesystems. |
+| `-h`           | Provide a short help summary. |
+| `--no-headers` | Do not print headers. |
+| `-v`           | Report the current version of the program. |
 
 ## tar
 
