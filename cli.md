@@ -93,7 +93,7 @@ watch vmstat -d
 htop
 ```
 
-## [find](../find.md)
+## [find](find.md)
 
 Basic Syntax: 
 
